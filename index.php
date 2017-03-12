@@ -5,11 +5,11 @@ session_start();
 require 'vendor/autoload.php';
 require('app/core/Config.php');
 
-use AppModels\ContactModel;
 use AppControllers\ContactsController;
 
-// Register Smarty as the view class
-// Also pass a callback function to configure Smarty on load
+$ctrl = new ContactsController();
+
+// Register Smarty
 Flight::register('view', 'Smarty', array(), function($smarty){
     $smarty->template_dir = './tpl/';
     $smarty->compile_dir = './tpl_cache/';
@@ -31,9 +31,7 @@ if (!empty($_SESSION['alert'])) {
      $_SESSION['alert'] = array();  
 }
 
-// Routes
 
- $ctrl = new ContactsController();
 // Contacts
 Flight::route('/contacts', function() use($ctrl) {
    Flight::render('contacts/list.tpl', $ctrl->showAll());
@@ -61,19 +59,20 @@ Flight::route('POST /contacts/results', function() use($ctrl) {
    Flight::render('contacts/search.tpl', $ctrl->searchContacts($query));
 });
 
-// Routes
+// Login
 Flight::route('/login', function(){
    Flight::view()->assign("base_dir" , "/base");
-   Flight::view()->display('login.tpl');
+   Flight::view()->display('misc/login.tpl');
 });
 
+// Home
 Flight::route('/', function(){
-   Flight::render('homepage.tpl');
+   Flight::render('misc/homepage.tpl');
 });
 
-// No route match the URL 
+// 404
 Flight::map('notFound', function(){
-    Flight::render('404.tpl');
+    Flight::render('misc/404.tpl');
 });
 Flight::start();
 ?>

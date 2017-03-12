@@ -22,7 +22,7 @@ class ContactsController extends Controller {
 
     public function showAll() {
         $this->set('title', 'Liste des contacts');
-        $this->set('contacts', $this->_contactModel->find('all'));
+        $this->set('contacts', $this->_contactModel->all());
         return $this->_data;
     }
 

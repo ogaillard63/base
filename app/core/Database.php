@@ -1,6 +1,7 @@
 <?php
 namespace AppCore;
 use PDO;
+use AppCore\Logger;
 
 class Database extends PDO {
 
@@ -11,9 +12,7 @@ class Database extends PDO {
 			$this->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			$this->setAttribute(PDO::MYSQL_ATTR_INIT_COMMAND, "SET NAMES 'utf8'");
 		} catch(PDOException $e){
-			die($e);
-            //Logger::newMessage($e);
-			//logger::customErrorMsg();
+            Logger::message($e);
 		}
 
 	}

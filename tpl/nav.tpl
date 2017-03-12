@@ -16,7 +16,7 @@
     </ul>
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#">xxx</a>
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">User</a>
           <ul class="dropdown-menu">
             <li><a href="{$base_dir}/"><i class="fa fa-bank"></i> Home</a></li>
             <li><a href="{$base_dir}/profil"><i class="fa fa-users"></i> Profil</a></li>

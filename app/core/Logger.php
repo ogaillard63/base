@@ -7,4 +7,7 @@ class Logger {
        $_SESSION['alert'] = array ('msg' => $msg, 'type' => $type);
    }
 
+  public static function message($msg) {
+  			die($e);
+   }
 }
