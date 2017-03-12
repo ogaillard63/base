@@ -1,0 +1,37 @@
+body {
+  font-size: 16px;
+}
+/* flat button */
+.btn {
+    background-image: none;
+    border: 0;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+/* alert notification */
+.notification {
+      position: fixed;
+      top: 1em;
+      right: 1em;
+      z-index: 1001;
+    }
+/* navbar */
+.navbar-default .navbar-brand {
+    color: #FFF;   
+}
+.navbar-default {
+    background-color: #3497da;
+    border:none;
+    color: #FFF;
+}
+/* buttons, select, dropdown */
+.btn-group a.btn {
+    margin-right: 5px;
+}
+/* login page */
+#login-container {
+    max-width: 400px;
+    padding: 15px;
+    margin: 0 auto;
+}
